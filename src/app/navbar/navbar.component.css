@@ -1,0 +1,37 @@
+mat-toolbar {
+    background-color: #ffffff;
+    height: 64px;
+    font-family: 'Roboto', sans-serif;
+    color: #333333; /* Color de texto oscuro para contraste */
+    box-shadow: 0 2px 4px rgba(114, 114, 114, 0.1); /* Sombra sutil para separar del contenido */
+  }
+  
+  .brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0d0f14; 
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  button {
+    font-size: 16px;
+    font-weight: 500; /* Semi-negrita para mejor legibilidad */
+    color: #aca8a8;
+  }
+  
+  /* Estilo para el menú desplegable */
+  ::ng-deep .mat-menu-content {
+    background-color: #ffffff;
+  }
+  
+  ::ng-deep .mat-menu-item {
+    color: #333333;
+    font-weight: 400;
+  }
+  
+  ::ng-deep .mat-menu-item:hover {
+    background-color: #f5f5f5;
+  }

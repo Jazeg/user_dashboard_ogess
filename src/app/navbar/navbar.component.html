@@ -1,0 +1,11 @@
+<mat-toolbar>
+    <span class="brand">OGESS BAJO MAYO</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      {{ userName }}
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+  </mat-toolbar>

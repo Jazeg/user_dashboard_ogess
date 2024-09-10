@@ -1,0 +1,11 @@
+.content-container {
+    display: flex;
+    height: calc(100vh - 64px);
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f3f4f6;
+    overflow-y: auto;
+  }

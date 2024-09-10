@@ -1,0 +1,98 @@
+/* Estilos generales */
+:host {
+    display: block;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el campo de búsqueda */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Sobrescritura del estilo MDC para el input */
+  :host ::ng-deep .mat-mdc-text-field-wrapper {
+    background-color: white !important;
+    border-radius: 4px;
+  }
+  
+  :host ::ng-deep .mat-mdc-form-field-flex {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  /* Corrección para el color del texto en el input */
+  :host ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: #0d0f14 !important;
+  }
+  
+  /* Estilos para la tabla */
+  :host ::ng-deep .mat-mdc-table {
+    background-color: white !important;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  :host ::ng-deep .mat-mdc-header-cell {
+    background-color: #f5f5f5 !important;
+    color: black !important;
+    font-weight: bold;
+    padding: 15px;
+  }
+  
+  :host ::ng-deep .mat-mdc-cell {
+    padding: 15px;
+    color: #0d0f14 !important;
+  }
+  
+  :host ::ng-deep .mat-mdc-row:not(:last-child) .mat-mdc-cell {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Sobrescritura de estilos MDC para el color del texto en la tabla */
+  :host ::ng-deep .mdc-data-table__cell {
+    color: #0d0f14 !important;
+  }
+  
+  /* Estilos específicos para las columnas */
+  .mat-column-name {
+    flex: 0 0 30%;
+  }
+  
+  .mat-column-email {
+    flex: 0 0 40%;
+  }
+  
+  .mat-column-role {
+    flex: 0 0 30%;
+  }
+  
+  /* Estilos para los roles */
+  .role {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+  
+  .role-admin {
+    background-color: #e3f2fd;
+    color: #1976d2;
+  }
+  
+  .role-user {
+    background-color: #e8f5e9;
+    color: #388e3c;
+  }
+  
+  .role-editor {
+    background-color: #fff3e0;
+    color: #f57c00;
+  }
