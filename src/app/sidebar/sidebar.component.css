@@ -1,51 +1,141 @@
-mat-nav-list {
-    width: 250px;
-    height: calc(100vh - 64px);
-    background-color: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    border-right: 1px solid #e0e0e0;
-    padding-top: 20px;
-  }
-  
-  .sidebar-item {
-    display: flex;
-    align-items: center;
-    padding: 16px 24px;
-    margin-bottom: 8px;
-    color: #0d0f14 !important;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s;
-  }
-  
-  .sidebar-item:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .sidebar-item.active {
-    background-color: #e8f0fe;
-  }
-  
-  .sidebar-item fa-icon {
-    margin-right: 16px;
-    font-size: 20px;
-    width: 24px;
-    text-align: center;
-  }
-  
-  .sidebar-item span {
-    font-size: 16px;
-  }
-  
-  mat-divider {
-    margin: 16px 0;
-  }
-  
-  /* Sobrescritura del estilo MDC */
-  :host ::ng-deep .mdc-list-item__primary-text {
-    color: #0d0f14 !important;
-  }
-  
-  :host ::ng-deep .mat-mdc-list-item {
-    --mdc-list-list-item-label-text-color: #0d0f14;
-  }
+:host {
+  display: block;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  border-right: 1px solid #e0e0e0;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #f5f5f5;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.sidebar-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+:host ::ng-deep .mat-mdc-list-item {
+  height: auto;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  margin-bottom: 8px;
+  color: #0d0f14;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-item:hover, 
+.sidebar-item.active {
+  background-color: #5a5a5a;
+  color: #ffffff;
+}
+
+.sidebar-item:hover fa-icon, 
+.sidebar-item.active fa-icon {
+  color: #ffffff;
+}
+
+.sidebar-item fa-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.sidebar-item span {
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+:host ::ng-deep .mat-divider {
+  margin: 16px 0;
+}
+
+/* Estilos para el sidebar colapsado */
+.collapsed .sidebar-item {
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.collapsed .sidebar-item fa-icon {
+  margin-right: 0;
+}
+
+.collapsed .sidebar-item span {
+  display: none;
+}
+
+/* Centrar íconos en el sidebar colapsado */
+.collapsed :host ::ng-deep .mat-mdc-list-item {
+  padding: 16px 0;
+}
+
+.collapsed :host ::ng-deep .mdc-list-item__content {
+  padding: 0;
+  justify-content: center;
+}
+
+/* Ajustar el contenido de los ítems de la lista */
+:host ::ng-deep .mat-mdc-list-item-unscoped-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.collapsed :host ::ng-deep .mat-mdc-list-item-unscoped-content {
+  justify-content: center;
+}
+
+/* Sobrescritura del estilo MDC */
+:host ::ng-deep .mdc-list-item__primary-text {
+  color: inherit;
+}
+
+/* Estilos para el contenido del ítem */
+.sidebar-item-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.collapsed .sidebar-item-content {
+  justify-content: center;
+}
+
+/* Asegurar que el color del texto y los íconos sea visible en estado activo */
+:host ::ng-deep .mat-mdc-list-item.mdc-list-item--activated {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+:host ::ng-deep .mat-mdc-list-item.mdc-list-item--activated .mdc-list-item__primary-text,
+:host ::ng-deep .mat-mdc-list-item.mdc-list-item--activated fa-icon {
+  color: #ffffff;
+}

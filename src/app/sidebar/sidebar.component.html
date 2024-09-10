@@ -1,19 +1,35 @@
-<mat-nav-list>
+<div class="sidebar" [class.collapsed]="isCollapsed">
+  <div class="sidebar-header">
+    <h2 *ngIf="!isCollapsed">User Find</h2>
+    <button (click)="toggleSidebar()">
+      <fa-icon [icon]="['fas', 'bars']"></fa-icon>
+    </button>
+  </div>
+  <mat-nav-list>
     <a mat-list-item (click)="openFileImportDialog()" class="sidebar-item">
-      <fa-icon [icon]="['fas', 'file-import']"></fa-icon>
-      <span>Importar Archivos</span>
+      <div class="sidebar-item-content">
+        <fa-icon [icon]="['fas', 'file-import']"></fa-icon>
+        <span>Importar Archivos</span>
+      </div>
     </a>
     <mat-divider></mat-divider>
-    <a mat-list-item routerLink="/home" class="sidebar-item">
-      <fa-icon [icon]="['fas', 'home']"></fa-icon>
-      <span>Home</span>
+    <a mat-list-item routerLink="/home" routerLinkActive="active" class="sidebar-item">
+      <div class="sidebar-item-content">
+        <fa-icon [icon]="['fas', 'home']"></fa-icon>
+        <span>Home</span>
+      </div>
     </a>
-    <a mat-list-item routerLink="/users" class="sidebar-item">
-      <fa-icon [icon]="['fas', 'users']"></fa-icon>
-      <span>Users</span>
+    <a mat-list-item routerLink="/users" routerLinkActive="active" class="sidebar-item">
+      <div class="sidebar-item-content">
+        <fa-icon [icon]="['fas', 'users']"></fa-icon>
+        <span>Users</span>
+      </div>
     </a>
-    <a mat-list-item routerLink="/settings" class="sidebar-item">
-      <fa-icon [icon]="['fas', 'cog']"></fa-icon>
-      <span>Settings</span>
+    <a mat-list-item routerLink="/settings" routerLinkActive="active" class="sidebar-item">
+      <div class="sidebar-item-content">
+        <fa-icon [icon]="['fas', 'cog']"></fa-icon>
+        <span>Settings</span>
+      </div>
     </a>
   </mat-nav-list>
+</div>

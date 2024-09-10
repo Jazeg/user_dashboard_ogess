@@ -1,6 +1,7 @@
+// sidebar.component.ts
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faUsers, faCog, faFileImport } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faCog, faFileImport, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 @Component({
@@ -9,9 +10,16 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
+  isCollapsed = false;
+
   constructor(library: FaIconLibrary) {
-    library.addIcons(faHome, faUsers, faCog, faFileImport);
+    library.addIcons(faHome, faUsers, faCog, faFileImport, faBars);
   }
+
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
   openFileImportDialog() {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
